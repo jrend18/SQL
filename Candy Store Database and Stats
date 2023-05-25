@@ -1,0 +1,26 @@
+--Create a candy store database
+
+CREATE TABLE candy (id integer primary key, name TEXT, quantity INTEGER, price INTEGER, aisle INTEGER);
+
+INSERT INTO candy VALUES
+(1, "COTTON CANDY", 3, 4.80, 5),
+(2, "TWIZZLERS", 2, 5.00, 1),
+(3, "AIRHEADS", 4, 2.80, 3),
+(4, "TWIX", 20, 2.50, 2),
+(5, "SNICKERS", 15, 3.45, 4),
+(6, "SMARTIES", 8, 4.89, 3),
+(7, "STARBURST", 3, 6.25, 2),
+(8, "NERDS", 13, 2.74, 3),
+(9, "KIT KAT", 6, 3.33, 5),
+(10, "SKITTLES",7, 3.45, 6),
+(11, "M&M'S", 10, 2.79, 4),
+(12, "JOLLY RANCHER", 5, 4.50,3),
+(13, "BABY RUTH", 7, 2.40, 2),
+(14, "ALMOND JOY", 8, 3.87, 1),
+(15, "HOT TAMALES", 3, 4.68, 3);
+
+--display the database ordered by price. 
+SELECT * FROM candy ORDER BY price;
+
+--what is the sum of items per aisle?
+SELECT aisle, SUM(quantity) FROM candy GROUP BY AISLE;
